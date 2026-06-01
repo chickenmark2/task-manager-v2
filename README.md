@@ -1,16 +1,33 @@
-# React + Vite
+# 課題管理アプリ v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+千葉工業大学の manaba から課題を取り込んで管理するアプリです。
 
-Currently, two official plugins are available:
+## アプリ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+https://task-manager-v3-drab.vercel.app
 
-## React Compiler
+## 機能
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- manaba の未提出課題を Chrome 拡張機能で取り込み
+- 締め切り順・作成日順の並び替え
+- 課題をステップに分割して進捗管理
+- 完了ごとにご褒美タイムを設定
 
-## Expanding the ESLint configuration
+## Chrome 拡張機能のインストール
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. [Releases](../../releases) から `manaba-extension-v2.zip` をダウンロードして解凍
+2. Chrome で `chrome://extensions` を開く
+3. 右上の「デベロッパーモード」をオン
+4. 「パッケージ化されていない拡張機能を読み込む」→ 解凍した `manaba-extension` フォルダを選択
+
+## 使い方
+
+1. 拡張機能アイコンをクリックしてメールアドレス・パスワードでログイン
+2. manaba（https://cit.manaba.jp）を開いた状態で「🔍 このページの課題をスキャン」をクリック
+3. 取り込む課題にチェックを入れて「✅ 選択した課題を登録する」をクリック
+4. アプリで課題を確認・管理
+
+### ポイント
+
+- 登録済みの課題は「✓ 登録済み」と表示され、重複登録されません
+- 締め切りがない課題はデフォルトでチェックオフになります
