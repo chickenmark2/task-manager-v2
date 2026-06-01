@@ -43,7 +43,7 @@ export default function Dashboard({ user, navigate }) {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
-  const [sortBy, setSortBy] = useState('created');
+  const [sortBy, setSortBy] = useState('deadline');
 
   useEffect(() => {
     const q = query(

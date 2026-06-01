@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "manaba 課題取り込み",
+  "version": "1.0",
+  "description": "manabaの課題を課題管理アプリに自動登録します",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://cit.manaba.jp/*",
+    "https://identitytoolkit.googleapis.com/*",
+    "https://securetoken.googleapis.com/*",
+    "https://firestore.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "manaba 課題取り込み"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://cit.manaba.jp/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
